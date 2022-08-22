@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+    backend: 
+      image: image-db
+      ports:
+        - "80:80"
+    MYSQL_DATABASE:
+        image: db
+        ports:
+          - "8080:8080"
+        environment:
+          MYSQl_ROOT_PASSWORD: Senh@Forte
+          MYSQL_DATABASE: MYSQL_DATABASE
+          MYSQL_USER: admin
+          MYSQL_PASSWORD: Senh@Forte
+        volumes:
+        - db-data:var/lib/mysql 
+
+volumes:
+  db-data:
