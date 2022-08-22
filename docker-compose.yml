@@ -7,10 +7,10 @@ services:
     MYSQL_DATABASE:
         image: db
         ports:
-          - "8080:8080"
+          - "3306:3036"
         environment:
           MYSQl_ROOT_PASSWORD: Senh@Forte
-          MYSQL_DATABASE: MYSQL_DATABASE
+          MYSQL_DATABASE: image-db
           MYSQL_USER: admin
           MYSQL_PASSWORD: Senh@Forte
         volumes:
