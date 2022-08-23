@@ -3,18 +3,21 @@ services:
     backend: 
       image: image-db
       ports:
-        - "80:80"
+        - "80"
     MYSQL_DATABASE:
-        image: db
-        ports:
-          - "3306:3036"
+        image: image-db
         environment:
           MYSQl_ROOT_PASSWORD: Senh@Forte
           MYSQL_DATABASE: image-db
           MYSQL_USER: admin
           MYSQL_PASSWORD: Senh@Forte
         volumes:
-        - db-data:var/lib/mysql 
-
+          - db-data:var/lib/mysql
+        ports:
+          - "3306:3036"
 volumes:
   db-data:
+
+networks:
+  default:
+    driver: bridge
