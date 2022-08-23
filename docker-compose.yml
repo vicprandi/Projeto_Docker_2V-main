@@ -1,23 +1,17 @@
 version: '3.5'
 services:
     backend: 
-      image: image-db
-      ports:
-        - "80"
+      image: mysql-image
+      name: mysql-image-name
     MYSQL_DATABASE:
-        image: image-db
-        environment:
-          MYSQl_ROOT_PASSWORD: Senh@Forte
-          MYSQL_DATABASE: image-db
-          MYSQL_USER: admin
-          MYSQL_PASSWORD: Senh@Forte
-        volumes:
-          - db-data:var/lib/mysql
+        image: mysql-image
         ports:
           - "3306:3036"
+    environment:
+        MYSQL_DATABASE: mysql
+        MYSQL_USER: admin
+        MYSQL_ALLOW_EMPTY_PASSWORD: null
+    volumes:
+          - db-data:var/lib/mysql
 volumes:
   db-data:
-
-networks:
-  default:
-    driver: bridge
