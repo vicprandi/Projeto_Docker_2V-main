@@ -22,6 +22,8 @@ b. para ver os containers ativos -> docker ps -a
 c. para subir o container com a imagem -> docker run -dit --name container-vic mysql-image /bin/bash
 d. entrar no container ativo -> docker attach container-vic
 
+e. docker run -dit --name container-vic --mount type=bind,source="/c/Users/VICTPGM/teste",target=/var/lib/mysql mysql-image /bin/bash
+
 :) 
     
 
