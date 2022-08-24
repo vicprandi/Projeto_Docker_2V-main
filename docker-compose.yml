@@ -28,4 +28,4 @@ services:
     volumes:
       - "/home/VICTPGM:/var/lib/mysql"
 
-version:   
+version: "3"
